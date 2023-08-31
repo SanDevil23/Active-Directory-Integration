@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    azure:
+      issuer-uri: https://login.microsoftonline.com/common/oauth2/v2.0/authorize/api://2cb9d070-795b-49c8-a0ad-d5dc3cea1921
+      active-directory:
+        enabled: true
+        profile:
+          tenant-id: 8ab2a5cc-70b9-4dd0-a70d-42307a4be2ed
+        credential:
+          client-id: 2cb9d070-795b-49c8-a0ad-d5dc3cea1921
+          client-secret: 2c87e2ce-07ee-48be-89e5-96f02dace497
+
+        #user-group:
+        #allowed-groups:
+
+server:
+  port: 8080
+  forward-headers-strategy: native

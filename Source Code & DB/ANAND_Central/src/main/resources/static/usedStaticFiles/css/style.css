@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+/* Font Awesome */
+@import url("generalCss/all.css");
+/* Theme style */
+@import url("generalCss/adminlte.css");
+
+@import url("generalCss/anand-group-custom.css");
+
+@import url("generalCss/pace-theme-flat-top.css");
+
+@import url("../fontawesome/css/all.min.css");
+
+@import url("../fontawesome/css/all1.css");
+
+@import url("../fontawesome/css/brands.min.css");
+
+@import url("../fontawesome/css/fontawesome.min.css");
+
+@import url("../fontawesome/css/regular.min.css");
+
+@import url("../fontawesome/css/solid.min.css");
+
+@import url("../fontawesome/css/v4-shims.min.css");

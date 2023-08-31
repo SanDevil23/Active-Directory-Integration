@@ -1,0 +1,61 @@
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: hr_anand
+-- ------------------------------------------------------
+-- Server version	8.0.19
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `m_user_app_map`
+--
+
+DROP TABLE IF EXISTS `m_user_app_map`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `m_user_app_map` (
+  `m_user_app_map_id` bigint NOT NULL AUTO_INCREMENT,
+  `m_user_id` bigint DEFAULT NULL,
+  `m_app_id` bigint DEFAULT NULL,
+  `user_app_active` int DEFAULT NULL,
+  `user_app_created_on` datetime DEFAULT NULL,
+  `user_app_created_by` bigint DEFAULT NULL,
+  PRIMARY KEY (`m_user_app_map_id`),
+  KEY `appUserRef` (`m_app_id`),
+  KEY `userAppRef` (`m_user_id`),
+  KEY `userAppCreatedBy` (`user_app_created_by`),
+  CONSTRAINT `appUserRef` FOREIGN KEY (`m_app_id`) REFERENCES `m_app` (`m_app_id`),
+  CONSTRAINT `userAppCreatedBy` FOREIGN KEY (`user_app_created_by`) REFERENCES `m_user` (`m_user_id`),
+  CONSTRAINT `userAppRef` FOREIGN KEY (`m_user_id`) REFERENCES `m_user` (`m_user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `m_user_app_map`
+--
+
+LOCK TABLES `m_user_app_map` WRITE;
+/*!40000 ALTER TABLE `m_user_app_map` DISABLE KEYS */;
+INSERT INTO `m_user_app_map` VALUES (1,1,3,1,'2022-11-01 14:24:57',1),(2,1,1,1,'2022-11-01 14:24:57',1),(3,1,2,1,'2022-11-01 14:29:15',1),(4,1,4,1,'2022-11-16 16:17:17',1),(5,1,5,1,'2023-01-04 09:17:25',1),(6,6,4,1,'2023-01-07 12:35:25',1),(7,12,4,1,'2023-01-09 13:56:01',1),(8,11,4,1,'2023-01-09 13:56:30',1),(9,10,4,1,'2023-01-09 13:56:59',1),(10,9,4,1,'2023-01-09 13:57:24',1),(11,8,4,1,'2023-01-09 13:57:54',1),(12,7,4,1,'2023-01-09 13:58:16',1),(13,14,4,1,'2023-01-09 14:02:48',1),(14,13,4,1,'2023-01-09 14:03:26',1),(15,15,4,1,'2023-01-10 09:55:20',1),(16,5,6,1,'2023-01-11 14:59:54',1),(17,4,6,1,'2023-01-11 15:02:23',1),(18,3,6,0,'2023-01-11 15:04:25',1),(19,39,4,1,'2023-01-12 09:11:41',1),(20,38,4,1,'2023-01-12 09:12:03',1),(21,37,4,1,'2023-01-12 09:13:44',1),(22,36,4,1,'2023-01-12 09:14:00',1),(23,35,4,1,'2023-01-12 09:14:17',1),(24,34,4,1,'2023-01-12 09:14:31',1),(25,32,4,1,'2023-01-12 09:14:45',1),(26,31,4,1,'2023-01-12 09:15:06',1),(27,33,4,1,'2023-01-12 09:15:23',1),(28,30,4,1,'2023-01-12 09:15:37',1),(29,29,4,1,'2023-01-12 09:24:57',1),(30,28,4,1,'2023-01-12 09:25:17',1),(31,27,4,1,'2023-01-12 09:25:32',1),(32,26,4,1,'2023-01-12 09:25:50',1),(33,25,4,1,'2023-01-12 09:26:05',1),(34,24,4,1,'2023-01-12 09:26:31',1),(35,23,4,1,'2023-01-12 09:27:01',1),(36,22,4,1,'2023-01-12 09:27:13',1),(37,21,4,1,'2023-01-12 09:27:26',1),(38,20,4,1,'2023-01-12 09:27:37',1),(39,19,4,1,'2023-01-12 09:27:55',1),(40,18,4,1,'2023-01-12 09:28:09',1),(41,17,4,1,'2023-01-12 09:28:22',1),(42,16,4,1,'2023-01-12 09:28:34',1),(43,40,4,1,'2023-01-13 09:19:37',1),(44,43,5,1,'2023-01-13 13:56:05',1),(45,42,5,1,'2023-01-13 13:56:34',1),(46,41,5,1,'2023-01-13 13:56:59',1),(47,44,5,1,'2023-01-13 14:40:04',1),(48,1,7,1,'2023-04-03 17:56:50',1),(49,45,7,1,'2023-04-05 14:56:05',1),(50,46,1,1,'2023-04-19 18:59:40',1),(51,47,1,1,'2023-04-19 19:02:26',1),(52,48,1,1,'2023-04-19 19:06:42',1),(53,50,1,1,'2023-04-19 19:08:14',1),(54,49,1,1,'2023-04-19 19:10:53',1),(55,51,1,1,'2023-05-01 12:27:17',1),(56,52,1,1,'2023-05-30 18:33:00',1),(57,3,3,1,'2023-07-14 11:31:02',1),(58,1,8,1,'2023-07-27 18:34:52',1);
+/*!40000 ALTER TABLE `m_user_app_map` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-08-18 12:05:29
